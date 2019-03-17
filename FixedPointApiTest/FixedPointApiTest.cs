@@ -11,7 +11,7 @@ namespace FixedPointApiTest {
 #if STUDENT_VERSION
 	class Program {
 		static void Main(string[] args) {
-			/*Console.WriteLine("Q24_8:");
+			Console.WriteLine("Q24_8:");
 			{
 				var f1 = new Fixed<Q24_8>(3);
 				Console.WriteLine($"3: {f1}");
@@ -102,7 +102,7 @@ namespace FixedPointApiTest {
 				f2 = new Fixed<Q8_24>(1000);
 				f3 = f1.Divide(f2);
 				Console.WriteLine($"625 / 1000: {f3}");
-			}*/
+			}
 		}
 	}
 #endif

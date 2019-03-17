@@ -34,6 +34,8 @@
     <Compile Include="Fixed.cs" />
     <Compile Include="Q24_8.cs" />
     <Compile Include="IQ.cs" />
+    <Compile Include="Q8_24.cs" />
+    <Compile Include="Q16_16.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
