@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixedPointApiTest", "FixedPointApiTest\FixedPointApiTest.csproj", "{6B89A9CB-5B51-4D33-8AFC-C069C7729678}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixedPointLibrary", "FixedPointLibrary\FixedPointLibrary.csproj", "{132C1FF1-2C1F-4C85-A48C-5531BBF0A350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryTests", "LibraryTests\LibraryTests.csproj", "{086EF419-CBE2-4C80-9DE9-866570212182}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B89A9CB-5B51-4D33-8AFC-C069C7729678}.Debug|x86.ActiveCfg = Debug|x86
+		{6B89A9CB-5B51-4D33-8AFC-C069C7729678}.Debug|x86.Build.0 = Debug|x86
+		{6B89A9CB-5B51-4D33-8AFC-C069C7729678}.Release|x86.ActiveCfg = Release|x86
+		{6B89A9CB-5B51-4D33-8AFC-C069C7729678}.Release|x86.Build.0 = Release|x86
+		{132C1FF1-2C1F-4C85-A48C-5531BBF0A350}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{132C1FF1-2C1F-4C85-A48C-5531BBF0A350}.Debug|x86.Build.0 = Debug|Any CPU
+		{132C1FF1-2C1F-4C85-A48C-5531BBF0A350}.Release|x86.ActiveCfg = Release|Any CPU
+		{132C1FF1-2C1F-4C85-A48C-5531BBF0A350}.Release|x86.Build.0 = Release|Any CPU
+		{086EF419-CBE2-4C80-9DE9-866570212182}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{086EF419-CBE2-4C80-9DE9-866570212182}.Debug|x86.Build.0 = Debug|Any CPU
+		{086EF419-CBE2-4C80-9DE9-866570212182}.Release|x86.ActiveCfg = Release|Any CPU
+		{086EF419-CBE2-4C80-9DE9-866570212182}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
