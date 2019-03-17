@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{132C1FF1-2C1F-4C85-A48C-5531BBF0A350}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>FixedPointLibrary</RootNamespace>
+    <RootNamespace>Cuni.Arithmetics.FixedPoint</RootNamespace>
     <AssemblyName>FixedPointLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
@@ -30,8 +30,10 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Fixed.cs" />
+    <Compile Include="Q24_8.cs" />
+    <Compile Include="IQ.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

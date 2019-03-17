@@ -35,7 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ExampleTest.cs" />
+    <Compile Include="FixedTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
