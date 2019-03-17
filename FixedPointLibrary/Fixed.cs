@@ -43,14 +43,18 @@ namespace Cuni.Arithmetics.FixedPoint
         public Fixed<Q> Divide(Fixed<Q> that)
         {
             return new Fixed<Q> {
-                representation = (this.representation << new Q().DecimalPlaces()) / that.representation
+                representation = (int)(
+                    ((long)this.representation << new Q().DecimalPlaces()) / (long)that.representation
+                )
             };
         }
 
         public Fixed<Q> Multiply(Fixed<Q> that)
         {
             return new Fixed<Q> {
-                representation = (this.representation * that.representation) >> new Q().DecimalPlaces()
+                representation = (int)(
+                    ((long)this.representation * (long)that.representation) >> new Q().DecimalPlaces()
+                )
             };
         }
     }
