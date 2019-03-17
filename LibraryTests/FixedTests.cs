@@ -63,5 +63,34 @@ namespace LibraryTests
                 .ToString()
             );
         }
+
+        [Test]
+        public void ItCanMultiply()
+        {
+            Assert.AreEqual(
+                new Fixed<Q24_8>(5).Representation,
+                new Fixed<Q24_8>(1).Multiply(new Fixed<Q24_8>(5)).Representation
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(10).Representation,
+                new Fixed<Q24_8>(2).Multiply(new Fixed<Q24_8>(5)).Representation
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(1).Representation,
+                new Fixed<Q24_8>(-1).Multiply(new Fixed<Q24_8>(-1)).Representation
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(-1).Representation,
+                new Fixed<Q24_8>(-1).Multiply(new Fixed<Q24_8>(1)).Representation
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(0).Representation,
+                new Fixed<Q24_8>(0).Multiply(new Fixed<Q24_8>(42)).Representation
+            );
+        }
     }
 }

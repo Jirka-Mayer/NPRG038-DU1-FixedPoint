@@ -32,5 +32,12 @@ namespace Cuni.Arithmetics.FixedPoint
                 representation = (this.representation << new Q().DecimalPlaces()) / that.representation
             };
         }
+
+        public Fixed<Q> Multiply(Fixed<Q> that)
+        {
+            return new Fixed<Q> {
+                representation = (this.representation * that.representation) >> new Q().DecimalPlaces()
+            };
+        }
     }
 }
