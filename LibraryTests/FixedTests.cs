@@ -92,5 +92,34 @@ namespace LibraryTests
                 new Fixed<Q24_8>(0).Multiply(new Fixed<Q24_8>(42)).Representation
             );
         }
+
+        [Test]
+        public void ItCanAddAndSubtract()
+        {
+            Assert.AreEqual(
+                new Fixed<Q24_8>(6).Representation,
+                new Fixed<Q24_8>(1).Add(new Fixed<Q24_8>(5)).Representation
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(7).Representation,
+                new Fixed<Q24_8>(2).Add(new Fixed<Q24_8>(5)).Representation
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(0).Representation,
+                new Fixed<Q24_8>(-1).Subtract(new Fixed<Q24_8>(-1)).Representation
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(-2).Representation,
+                new Fixed<Q24_8>(-1).Subtract(new Fixed<Q24_8>(1)).Representation
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(-42).Representation,
+                new Fixed<Q24_8>(0).Subtract(new Fixed<Q24_8>(42)).Representation
+            );
+        }
     }
 }

@@ -26,6 +26,20 @@ namespace Cuni.Arithmetics.FixedPoint
             return d.ToString();
         }
 
+        public Fixed<Q> Add(Fixed<Q> that)
+        {
+            return new Fixed<Q> {
+                representation = this.representation + that.representation
+            };
+        }
+
+        public Fixed<Q> Subtract(Fixed<Q> that)
+        {
+            return new Fixed<Q> {
+                representation = this.representation - that.representation
+            };
+        }
+
         public Fixed<Q> Divide(Fixed<Q> that)
         {
             return new Fixed<Q> {
