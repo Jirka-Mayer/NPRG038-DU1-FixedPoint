@@ -8,6 +8,8 @@ namespace Cuni.Arithmetics.FixedPoint
         /// </summary>
         private int representation;
 
+        public int Representation => representation;
+
         public Fixed(int value)
         {
             representation = value << new Q().DecimalPlaces();
@@ -15,7 +17,20 @@ namespace Cuni.Arithmetics.FixedPoint
 
         public override string ToString()
         {
-            return (representation >> new Q().DecimalPlaces()).ToString();
+            double d = (double)representation;
+            
+            int places = new Q().DecimalPlaces();
+            for (int i = 0; i < places; i++)
+                d /= 2;
+
+            return d.ToString();
+        }
+
+        public Fixed<Q> Divide(Fixed<Q> that)
+        {
+            return new Fixed<Q> {
+                representation = (this.representation << new Q().DecimalPlaces()) / that.representation
+            };
         }
     }
 }
