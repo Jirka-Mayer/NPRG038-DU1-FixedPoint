@@ -103,6 +103,22 @@ namespace FixedPointApiTest {
 				f3 = f1.Divide(f2);
 				Console.WriteLine($"625 / 1000: {f3}");
 			}
+
+			//
+
+			Console.WriteLine();
+			Console.WriteLine("Conversions:");
+            {
+                var f1 = new Fixed<Q24_8>(16);
+                var f2 = new Fixed<Q16_16>(16);
+                var f3 = new Fixed<Q8_24>(16);
+                Fixed<Q16_16> f4 = (Fixed<Q16_16>)f1;
+                Fixed<Q24_8> f5 = (Fixed<Q24_8>)f3;
+                Fixed<Q8_24> f6 = (Fixed<Q8_24>)f2;
+                Console.WriteLine($"24_8 -> 16_16: {f4}");
+                Console.WriteLine($"8_24 -> 24_8: {f5}");
+                Console.WriteLine($"16_16 -> 24_8: {f6}");
+            }
 		}
 	}
 #endif
