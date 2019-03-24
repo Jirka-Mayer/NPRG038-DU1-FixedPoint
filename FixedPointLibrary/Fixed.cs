@@ -1,8 +1,14 @@
 ﻿using System;
+
 namespace Cuni.Arithmetics.FixedPoint
 {
     public struct Fixed<Q> where Q : IQ, new()
     {
+        /// <summary>
+        /// How many bits (LSb) contribute to decimal places
+        /// </summary>
+        private static readonly int DecimalPlaces = new Q().DecimalPlaces();
+
         /// <summary>
         /// Inner representation of the value, treated as individual bits (32 bits)
         /// </summary>
@@ -12,14 +18,14 @@ namespace Cuni.Arithmetics.FixedPoint
 
         public Fixed(int value)
         {
-            representation = value << new Q().DecimalPlaces();
+            representation = value << DecimalPlaces;
         }
 
         public override string ToString()
         {
             double d = (double)representation;
             
-            int places = new Q().DecimalPlaces();
+            int places = DecimalPlaces;
             for (int i = 0; i < places; i++)
                 d /= 2;
 
@@ -44,7 +50,7 @@ namespace Cuni.Arithmetics.FixedPoint
         {
             return new Fixed<Q> {
                 representation = (int)(
-                    ((long)this.representation << new Q().DecimalPlaces()) / (long)that.representation
+                    ((long)this.representation << DecimalPlaces) / (long)that.representation
                 )
             };
         }
@@ -53,7 +59,7 @@ namespace Cuni.Arithmetics.FixedPoint
         {
             return new Fixed<Q> {
                 representation = (int)(
-                    ((long)this.representation * (long)that.representation) >> new Q().DecimalPlaces()
+                    ((long)this.representation * (long)that.representation) >> DecimalPlaces
                 )
             };
         }
