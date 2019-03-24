@@ -121,5 +121,24 @@ namespace LibraryTests
                 new Fixed<Q24_8>(0).Subtract(new Fixed<Q24_8>(42)).Representation
             );
         }
+
+        [Test]
+        public void CustomOperatorsWork()
+        {
+            Assert.AreEqual(
+                new Fixed<Q24_8>(6),
+                new Fixed<Q24_8>(1) + 5
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(-2),
+                (-1) - new Fixed<Q24_8>(1)
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(0),
+                new Fixed<Q24_8>(0) * new Fixed<Q24_8>(42)
+            );
+        }
     }
 }

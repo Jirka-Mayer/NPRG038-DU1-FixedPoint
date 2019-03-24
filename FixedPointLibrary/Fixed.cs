@@ -21,6 +21,11 @@ namespace Cuni.Arithmetics.FixedPoint
             representation = value << DecimalPlaces;
         }
 
+        public static implicit operator Fixed<Q>(int i)
+        {
+            return new Fixed<Q>(i);
+        }
+
         public override string ToString()
         {
             double d = (double)representation;
@@ -39,10 +44,27 @@ namespace Cuni.Arithmetics.FixedPoint
             };
         }
 
+        public static Fixed<Q> operator +(Fixed<Q> a, Fixed<Q> b)
+        {
+            return a.Add(b);
+        }
+
         public Fixed<Q> Subtract(Fixed<Q> that)
         {
             return new Fixed<Q> {
                 representation = this.representation - that.representation
+            };
+        }
+
+        public static Fixed<Q> operator -(Fixed<Q> a, Fixed<Q> b)
+        {
+            return a.Subtract(b);
+        }
+
+        public static Fixed<Q> operator -(Fixed<Q> a)
+        {
+            return new Fixed<Q> {
+                representation = -a.representation
             };
         }
 
@@ -55,6 +77,11 @@ namespace Cuni.Arithmetics.FixedPoint
             };
         }
 
+        public static Fixed<Q> operator /(Fixed<Q> a, Fixed<Q> b)
+        {
+            return a.Divide(b);
+        }
+
         public Fixed<Q> Multiply(Fixed<Q> that)
         {
             return new Fixed<Q> {
@@ -62,6 +89,29 @@ namespace Cuni.Arithmetics.FixedPoint
                     ((long)this.representation * (long)that.representation) >> DecimalPlaces
                 )
             };
+        }
+
+        public static Fixed<Q> operator *(Fixed<Q> a, Fixed<Q> b)
+        {
+            return a.Multiply(b);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+            
+            return ((Fixed<Q>)obj).Representation == this.Representation;
+        }
+
+        public static bool operator ==(Fixed<Q> a, Fixed<Q> b)
+        {
+            return a.Representation == b.Representation;
+        }
+
+        public static bool operator !=(Fixed<Q> a, Fixed<Q> b)
+        {
+            return a.Representation != b.Representation;
         }
     }
 }
