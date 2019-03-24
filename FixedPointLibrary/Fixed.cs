@@ -21,10 +21,25 @@ namespace Cuni.Arithmetics.FixedPoint
             representation = value << DecimalPlaces;
         }
 
-        public static implicit operator Fixed<Q>(int i)
+        public static implicit operator Fixed<Q>(int i) => new Fixed<Q>(i);
+
+        public static Fixed<Q> From<U>(Fixed<U> from) where U : IQ, new()
         {
-            return new Fixed<Q>(i);
+            int shiftLeft = new U().DecimalPlaces() - DecimalPlaces;
+
+            if (shiftLeft > 0)
+                return new Fixed<Q>() {
+                    representation = from.Representation >> shiftLeft
+                };
+            else
+                return new Fixed<Q>() {
+                    representation = from.Representation << -shiftLeft
+                };
         }
+
+        public static explicit operator Fixed<Q>(Fixed<Q24_8> from) => From<Q24_8>(from);
+        public static explicit operator Fixed<Q>(Fixed<Q16_16> from) => From<Q16_16>(from);
+        public static explicit operator Fixed<Q>(Fixed<Q8_24> from) => From<Q8_24>(from);
 
         public override string ToString()
         {

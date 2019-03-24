@@ -140,5 +140,24 @@ namespace LibraryTests
                 new Fixed<Q24_8>(0) * new Fixed<Q24_8>(42)
             );
         }
+
+        [Test]
+        public void ExplicitConversionWorks()
+        {
+            Assert.AreEqual(
+                new Fixed<Q24_8>(42),
+                (Fixed<Q24_8>)(new Fixed<Q16_16>(42))
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q24_8>(42),
+                (Fixed<Q24_8>)(new Fixed<Q8_24>(42))
+            );
+
+            Assert.AreEqual(
+                new Fixed<Q8_24>(42),
+                (Fixed<Q8_24>)(new Fixed<Q24_8>(42))
+            );
+        }
     }
 }

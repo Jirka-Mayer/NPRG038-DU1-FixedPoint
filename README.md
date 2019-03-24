@@ -1,5 +1,5 @@
-.NET I - homework 1
-===================
+.NET I - homework 1, 2
+======================
 
 Repo: [https://github.com/Jirka-Mayer/NPRG038-DU1-FixedPoint](https://github.com/Jirka-Mayer/NPRG038-DU1-FixedPoint)
 
