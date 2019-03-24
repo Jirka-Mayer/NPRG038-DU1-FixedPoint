@@ -103,6 +103,11 @@ namespace Cuni.Arithmetics.FixedPoint
             
             return ((Fixed<Q>)obj).Representation == this.Representation;
         }
+        
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 
         public static bool operator ==(Fixed<Q> a, Fixed<Q> b)
         {
